@@ -10,13 +10,13 @@ const StyledNav = styled.nav`
 
 const StyledLogo = styled(Link)`
   &:hover {
-    color: var(--green-accent);
+    color: #cc9900;
   }
 `;
 
 const StyledNavLinksContainer = styled.div`
   @media screen and (max-width: 768px) {
-    background-color: var(--background);
+    background-color: #cc9900;
     display: none;
     position: absolute;
     top: 0;

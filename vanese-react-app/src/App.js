@@ -9,38 +9,36 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
-
-import { allProjects, featuredProjects } from './utils/projectList';
-
 function App() {
   const [open, setOpen] = useState(false);
 
   return (
     <Router>
       <Header />
+      <div className="flex-column justify-flex-start min-100-vh">
+          {/* <Header />
+          <Home /> */}
+          <div >
+          <Route>
+            <Route path="/"
+            element={<Home />}
+           />
 
-      <Route exact path="/">
-        <ScrollToTop />
-        <Home featuredProjects={featuredProjects} />
-      </Route>
+          <Route path="/about"
+            element={<About />}
+           />
 
-      <Route exact path="/about">
-        <ScrollToTop />
-        <About />
-      </Route>
+          <Route path="/projects"
+            element={<About />}
+           />
+ 
+          <Route path="/contact"
+           element={<Contact />}
+           />
+        </Route>
 
-      <Route exact path="/projects">
-        <ScrollToTop />
-        <Projects allProjects={allProjects} />
-      </Route>
-
-      <Route exact path="/contact">
-        <ScrollToTop />
-        <Contact />
-      </Route>
-
-      <Footer />
-      <div>
+        <Footer />
+        </div>
         
       </div>
     </Router>

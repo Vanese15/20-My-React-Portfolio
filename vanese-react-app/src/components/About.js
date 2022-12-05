@@ -5,7 +5,7 @@ function About() {
     <div>
       <p className="content is-medium">Full Stack Developer</p>
       <hr />
-      <img className="my-pic" src="../" alt="Vanese D Buchanan"/>
+      <img className="img" src="./assets/VB.jpg" alt="Vanese D Buchanan"/>
       <p className="content">
         It's time for something new.  My work history started with finance.  
         To be honest, never in a million years would I have thought I'd end up in the tech field.  

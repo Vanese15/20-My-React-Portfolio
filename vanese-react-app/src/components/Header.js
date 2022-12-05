@@ -1,129 +1,55 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+//Needs to include Name and pull in Navigation component
+import React, { useState } from 'react';
+import Navigation from "./Navigation";
+import About from "./";
+import Contact from "";
+import Projects from "./Projects";
 
-const StyledNav = styled.nav`
-  justify-content: space-between;
-  height: 100%;
-  padding: 1em 0;
-`;
+function Header() {
+  const [currentPage, handlePageChange] = useState("About");
 
-const StyledLogo = styled(Link)`
-  &:hover {
-    color: #cc9900;
-  }
-`;
+  // The renderPage method uses a switch statement to render the appropriate current page
+  const renderPage = () => {
+    switch (currentPage) {
+      case "About":
+        return <About />;
+      case "Portfolio":
+        return <Portfolio />;
+      case "Contact":
+        return <Contact />;
+      case "Resume":
+        return <Resume />;
 
-const StyledNavLinksContainer = styled.div`
-  @media screen and (max-width: 768px) {
-    background-color: #cc9900;
-    display: none;
-    position: absolute;
-    top: 0;
-    right: -1000;
-    height: 100vh;
-    width: 100vw;
-    margin-top: 5em;
-    z-index: 2;
-  }
-`;
+      default:
+        return <About />;
+    }
+  };
 
-const StyledMainNavItem = styled(NavLink)`
-  margin-left: 75px;
-
-  @media screen and (max-width: 768px) {
-    margin: 2em 0;
-  }
-`;
-
-const StyledNavList = styled.div`
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 1em;
-    padding: 0;
-  }
-`;
-
-// Component function
-const Header = () => {
   return (
-    <header>
-      <div className="container">
-        <StyledNav id="main-nav" className="flex-item nav-links-container">
-          <StyledLogo id="header-logo" className="logo base-text" to="/">
-            T
-          </StyledLogo>
-          <StyledNavLinksContainer id="nav-links">
-            <StyledNavList id="nav-menu" className="flex-item nav-list">
-              <StyledMainNavItem
-                className="main-nav-item nav-item link green-link base-text"
-                exact
-                to="/"
-                activeStyle={{
-                  backgroundColor: '#47684a',
-                  color: 'rgb(238, 238, 238)',
-                }}
-              >
-                Home
-              </StyledMainNavItem>
-              <StyledMainNavItem
-                className="main-nav-item nav-item link green-link base-text"
-                exact
-                to="/about"
-                activeStyle={{
-                  backgroundColor: '#47684a',
-                  color: 'rgb(238, 238, 238)',
-                }}
-              >
-                About
-              </StyledMainNavItem>
-              <StyledMainNavItem
-                className="main-nav-item nav-item link green-link base-text"
-                exact
-                to="/projects"
-                activeStyle={{
-                  backgroundColor: '#47684a',
-                  color: 'rgb(238, 238, 238)',
-                }}
-              >
-                Projects
-              </StyledMainNavItem>
-              <StyledMainNavItem
-                className="main-nav-item nav-item link green-link base-text"
-                exact
-                to="/contact"
-                activeStyle={{
-                  backgroundColor: '#47684a',
-                  color: 'rgb(238, 238, 238)',
-                }}
-              >
-                Contact
-              </StyledMainNavItem>
-            </StyledNavList>
-          </StyledNavLinksContainer>
-        </StyledNav>
-      </div>
-    </header>
+    <div>
+      <nav className="navbar">
+        <div className="navbar-brand">
+          <a
+            className="navbar-item"
+            rel="noreferrer"
+            target="_blank"
+            href=""
+          >
+            <span className="content is-large">Vanese D Buchanan</span>
+          </a>
+        </div>
+      </nav>
+      {/* Pass the state value and the setter as props to NavTabs */}
+      <Navigation
+        currentPage={currentPage}
+        handlePageChange={handlePageChange}
+      />
+      {/* Call the renderPage function passing in the currentPage */}
+      <main>
+        <div>{renderPage(currentPage)}</div>
+      </main>
+    </div>
   );
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 export default Header;

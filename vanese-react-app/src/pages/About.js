@@ -1,67 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
 
-
-// Styled Components
-const StyledMain = styled.main`
-  min-height: 80vh;
-`;
-
-const StyledAboutIntro = styled.section`
-  justify-content: space-evenly;
-  margin: 4em auto;
-
-  @media screen and (max-width: 768px) {
-    height: auto;
-    margin: 2em auto;
-  }
-`;
-
-const StyledTopIntroContainer = styled.div`
-  width: 85%;
-  justify-content: space-between;
-
-  @media screen and (max-width: 992px) {
-    width: 100%;
-  }
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const StyledAboutTextContainer = styled.div`
-  width: 50%;
-
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
-// Component function
-const About = () => {
+function About() {
   return (
-    <StyledMain>
-      <StyledAboutIntro id="about-intro" className="intro container flex-item">
-        <StyledTopIntroContainer className="top-intro-container flex-item">
-          
-          <StyledAboutTextContainer
-            id="about-text-container"
-            className="flex-item flex-column"
-          >
-            <h1 className="base-text"></h1>
-            <p className="base-text">
-              
-            </p>
-            <p className="base-text">
-              
-            </p>
-          </StyledAboutTextContainer>
-        </StyledTopIntroContainer>
-      </StyledAboutIntro>
-
-    </StyledMain>
+    <div>
+      <p className="content is-medium">Full Stack Developer</p>
+      <hr />
+      <img className="my-pic" src="../" alt="Vanese D Buchanan"/>
+      <p className="content">
+        It's time for something new.  My work history started with finance.  
+        To be honest, never in a million years would I have thought I'd end up in the tech field.  
+        Although, at a young age, I was fascinated with knowing how things worked. 
+        I completed a program and acquired a wide range of technical skills.  I currently work with a 
+        level 2 support team and I've had an interest in learning C++.  I enrolled in a 
+        Full Stack Developer bootcamp because I ultimately want to work as a Front End Developer.
+      </p>
+    </div>
   );
-};
+}
 
 export default About;

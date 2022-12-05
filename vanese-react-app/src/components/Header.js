@@ -1,8 +1,8 @@
 //Needs to include Name and pull in Navigation component
 import React, { useState } from 'react';
 import Navigation from "./Navigation";
-import About from "./";
-import Contact from "";
+import About from "./About";
+import Contact from "./Contact";
 import Projects from "./Projects";
 
 function Header() {
@@ -13,12 +13,10 @@ function Header() {
     switch (currentPage) {
       case "About":
         return <About />;
-      case "Portfolio":
-        return <Portfolio />;
+      case "Projects":
+        return <Projects />;
       case "Contact":
         return <Contact />;
-      case "Resume":
-        return <Resume />;
 
       default:
         return <About />;
@@ -33,7 +31,7 @@ function Header() {
             className="navbar-item"
             rel="noreferrer"
             target="_blank"
-            href=""
+            href="."
           >
             <span className="content is-large">Vanese D Buchanan</span>
           </a>

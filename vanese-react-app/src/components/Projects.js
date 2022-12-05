@@ -1,7 +1,7 @@
 //Reference the Project.js to pull each JS file.
 
 import React from "react";
-import Project from "./Project";
+import Projects from "./Projects";
 
 const projects = [
   {
@@ -31,15 +31,15 @@ const projects = [
   
 ];
 
-function Portfolio() {
+function Repository() {
   return (
     <div>
-      <p className="content is-medium">Portfolio</p>
+      <p className="content is-medium">Projects</p>
       <hr />
 
-      <Project projects={projects} />
+      <Projects projects={projects} />
     </div>
   );
 }
 
-export default Portfolio;
+export default Projects;

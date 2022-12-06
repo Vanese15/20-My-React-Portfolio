@@ -3,7 +3,7 @@ import React from "react";
 function About() {
   return (
     <div>
-      <p className="content is-medium">Full Stack Developer</p>
+      <p className="content">Full Stack Developer</p>
       <hr />
       <img className="img" src="./assets/VB.jpg" alt="Vanese D Buchanan"/>
       <p className="content">

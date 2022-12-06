@@ -1,0 +1,15 @@
+a.navbar-link {
+  color: aliceblue;
+    font-size: 1.4em;
+    font-family: aharoni;
+    padding: 30px;
+}
+
+body {
+  font-family: aharoni;
+  color: black;
+  text-align: center;
+  background-color: #cc9900;
+
+}
+
